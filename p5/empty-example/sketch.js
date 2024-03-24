@@ -1,12 +1,13 @@
 let player;
 let gun;
 let cursor;
+let zombies = [];
 
 function setup() {
-createCanvas(800,800);
-player = new Player();
+  createCanvas(800, 800);
+  player = new Player();
 
-cursor = new Sprite();
+  cursor = new Sprite();
   cursor.img = 'Assets/crosshair.png';
   cursor.diameter = 50;
   cursor.layer = 3;
@@ -20,19 +21,28 @@ cursor = new Sprite();
 }
 
 function draw() {
-background (100,100,100);
-rectMode(CENTER);
-noCursor();
-player.draw();
-player.update();
+  background(100, 100, 100);
+  rectMode(CENTER);
+  noCursor();
+  player.draw();
+  player.update();
 
-cursor.position.x = mouseX;
-cursor.position.y = mouseY;
+  for (let zombie of zombies) {
+    zombie.draw();
+    zombie.update();
+  }
+
+  if (frameCount % 200 == 0) {
+    zombies.push(new Zombie(2));
+  }
+
+  cursor.position.x = mouseX;
+  cursor.position.y = mouseY;
 
 
 
 }
 
-function mouseClicked(){
+function mouseClicked() {
   player.shoot();
 }
