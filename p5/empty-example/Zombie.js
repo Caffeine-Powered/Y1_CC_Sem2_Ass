@@ -1,13 +1,13 @@
-class zombie {
+class Zombie {
 
   constructor(speed) {
     this.speed = speed;
     let y;
     if (random(1) < 0.5) {
-      // from the top
+
       y = random(-300, 0);
     } else {
-      // from the bottom
+
       y = random(height, height + 300);
     }
 
@@ -23,10 +23,21 @@ class zombie {
     pop();
   }
 
+  hasShot(zombie) {
+    for (let i = 0; i < this.bullets.length; i++) {
+      if (dist(this.bullets[i].x, this.bullets[i].y, zombie.pos.x, zombie.pos.y) < 15) {
+        this.bullets.splice(i, 1);
+        return true;
+      }
+    }
+    return false;
+  }
 
   update() {
     let difference = p5.Vector.sub(player.pos, this.pos);
     difference.limit(this.speed);
     this.pos.add(difference);
   }
+
+
 }

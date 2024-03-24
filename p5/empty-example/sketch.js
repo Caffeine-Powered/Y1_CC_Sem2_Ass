@@ -18,24 +18,32 @@ function setup() {
   gun.offset.x = 35;
   gun.layer = 4;
 
+
+
 }
 
 function draw() {
   background(100, 100, 100);
+
   rectMode(CENTER);
   noCursor();
   player.draw();
   player.update();
 
-  for (let zombie of zombies) {
-    zombie.draw();
-    zombie.update();
+  for (let i = zombies.length - 1; i >= 0; i--) {
+    zombies[i].draw();
+    zombies[i].update();
+
+    if (player.hasShot(zombies[i])) {
+      zombies.splice(i, 1);
+    }
   }
 
   if (frameCount % 200 == 0) {
     zombies.push(new Zombie(2));
   }
 
+  
   cursor.position.x = mouseX;
   cursor.position.y = mouseY;
 
