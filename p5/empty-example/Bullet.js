@@ -11,6 +11,8 @@ class Bullet{
         push();
         fill(255,0,0);
         circle(this.x,this.y,20);
+        fill(255,255,0);
+        circle(this.x,this.y,10);
         pop();
     }
 
