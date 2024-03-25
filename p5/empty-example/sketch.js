@@ -1,10 +1,10 @@
-let player;
-let gun;
-let cursor;
+let player;               //player var
+let gun;                  //gun var for gun sprite
+let cursor;               //cursor var for cursor sprite
 let zombies = [];
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(800, 800);   
   player = new Player();
 
   cursor = new Sprite();
@@ -33,17 +33,18 @@ function draw() {
   for (let i = zombies.length - 1; i >= 0; i--) {
     zombies[i].draw();
     zombies[i].update();
-
+    
     if (player.hasShot(zombies[i])) {
       zombies.splice(i, 1);
     }
   }
-
+  
   if (frameCount % 200 == 0) {
     zombies.push(new Zombie(2));
   }
 
-  
+
+
   cursor.position.x = mouseX;
   cursor.position.y = mouseY;
 
