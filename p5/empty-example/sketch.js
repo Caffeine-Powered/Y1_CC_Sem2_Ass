@@ -19,7 +19,6 @@ function setup() {
   gun.layer = 4;
 
 
-
 }
 
 function draw() {

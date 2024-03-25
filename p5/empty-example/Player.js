@@ -1,3 +1,6 @@
+let plr_sprite;
+
+
 class Player {
   constructor() {
     this.pos = createVector(width / 2, height / 2);
@@ -10,6 +13,9 @@ class Player {
     translate(this.pos.x, this.pos.y);
     rect(0, 0, 20, 20);
     pop();
+  
+
+    
 
     gun.overlaps(cursor);
     gun.rotateTowards(mouse, 0.5, 0);
@@ -38,6 +44,16 @@ class Player {
     }
     this.pos.add(xSpeed, ySpeed);
     this.angle = atan2(mouseY - this.pos.y, mouseX - this.pos.x);
+  }
+
+  hasShot(zombie) {
+    for (let i = 0; i < this.bullets.length; i++) {
+      if (dist(this.bullets[i].x, this.bullets[i].y, zombie.pos.x, zombie.pos.y) < 15) {
+        this.bullets.splice(i, 1);
+        return true;
+      }
+    }
+    return false;
   }
 
   shoot() {
