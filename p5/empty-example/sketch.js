@@ -3,9 +3,10 @@ let gun;                  //gun var for gun sprite
 let cursor;               //cursor var for cursor sprite
 let zombies = [];
 let score = 0;
+let level = 0;
 
 function setup() {
-  createCanvas(800, 800);   
+  createCanvas(800, 800);
   player = new Player();
 
   cursor = new Sprite();
@@ -22,41 +23,12 @@ function setup() {
 
 }
 
-function draw() {
-  background(100, 100, 100);
-  textSize(30);
-  text(score,width/2,100);
-
-  rectMode(CENTER);
-  noCursor();
-  player.draw();
-  player.update();
-
-  for (let i = zombies.length - 1; i >= 0; i--) {
-    zombies[i].draw();
-    zombies[i].update();
-    
-    if (player.hasShot(zombies[i])) {
-      score ++;
-      zombies.splice(i, 1);
-      console.log(score);
-    }
-  }
-  
-  if (frameCount % 200 == 0) {
-    zombies.push(new Zombie(2));
-  }
-
-
-
-  cursor.position.x = mouseX;
-  cursor.position.y = mouseY;
-
-
-
+function draw(){
+if (level== 0){
+  Menu();
+}else if (level == 1){
+  drawlevel1();
+}else if (level == 2){
+  drawlevel2();
 }
-
-function mouseClicked() {
-  player.shoot();
 }
-
