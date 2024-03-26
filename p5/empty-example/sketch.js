@@ -23,12 +23,12 @@ function setup() {
 
 }
 
-function draw(){
-if (level== 0){
-  Menu();
-}else if (level == 1){
-  drawlevel1();
-}else if (level == 2){
-  drawlevel2();
-}
+function draw() {
+  if (level == 0) {
+    Menu();
+  } else if (level == 1) {
+    drawlevel1();
+  } else if (level == 2) {
+    drawlevel2();
+  }
 }
