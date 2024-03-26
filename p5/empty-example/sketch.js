@@ -4,6 +4,7 @@ let cursor;               //cursor var for cursor sprite
 let zombies = [];
 let score = 0;
 let level = 0;
+let health = 3;
 
 function setup() {
   createCanvas(800, 800);
@@ -31,4 +32,6 @@ function draw() {
   } else if (level == 2) {
     drawlevel2();
   }
-}
+
+
+  }

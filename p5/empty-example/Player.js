@@ -1,6 +1,3 @@
-let plr_sprite;
-
-
 class Player {
   constructor() {
     this.pos = createVector(width / 2, height / 2);
@@ -25,7 +22,8 @@ class Player {
       bullet.update();
       bullet.draw();
     }
-  }
+
+}
 
   update() {
     let xSpeed = 0;
@@ -59,4 +57,6 @@ class Player {
   shoot() {
     this.bullets.push(new Bullet(this.pos.x, this.pos.y, this.angle));
   }
+
+
 }

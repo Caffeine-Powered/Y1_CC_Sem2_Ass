@@ -33,6 +33,10 @@ class Zombie {
     return false;
   }
 
+  ateYou() {
+    return dist(this.pos.x, this.pos.y, player.pos.x, player.pos.y) < 20;
+  }
+
   update() {
     let difference = p5.Vector.sub(player.pos, this.pos);
     difference.limit(this.speed);
