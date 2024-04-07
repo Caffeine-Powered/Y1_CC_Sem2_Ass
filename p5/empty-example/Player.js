@@ -1,3 +1,5 @@
+let gunShot;
+
 class Player {
   constructor() {
     this.pos = createVector(width / 2, height / 2);
@@ -12,8 +14,7 @@ class Player {
     pop();
   
 
-    
-
+  
     gun.overlaps(cursor);
     gun.rotateTowards(mouse, 0.5, 0);
     gun.moveTowards(this.pos.x, this.pos.y, 1, 0);
@@ -56,6 +57,7 @@ class Player {
 
   shoot() {
     this.bullets.push(new Bullet(this.pos.x, this.pos.y, this.angle));
+    //gunShot.play();
   }
 
 

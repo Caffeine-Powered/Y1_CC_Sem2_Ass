@@ -13,6 +13,10 @@ class Zombie {
 
     let x = random(-300, width + 300);
     this.pos = createVector(x, y);
+
+    if (level ==2){
+      
+    }
   }
 
 

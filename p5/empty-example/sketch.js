@@ -2,6 +2,8 @@ let player;               //player var
 let gun;                  //gun var for gun sprite
 let cursor;               //cursor var for cursor sprite
 let zombies = [];
+let zombieSpawnTime = 300;
+let frame = 0;
 let score = 0;
 let level = 0;
 let health = 3;
@@ -25,6 +27,11 @@ function setup() {
 }
 
 function draw() {
+
+  if (score == 2){
+    level = 2;
+  }
+
   if (level == 0) {
     Menu();
   } else if (level == 1) {
