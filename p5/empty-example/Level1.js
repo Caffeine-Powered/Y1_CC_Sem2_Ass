@@ -7,9 +7,9 @@ function setup() {
 
   cursor = new Sprite();
   cursor.img = 'Assets/crosshair.png';
-  cursor.diameter = 50;
+  cursor.diameter = 20;
   cursor.layer = 3;
-  cursor.scale = 2;
+  
 
   gun = new Sprite(width / 2, height / 2, 30, 10);
   gun.color = 'green';
@@ -31,6 +31,7 @@ function drawlevel1() {
   noCursor();
   player.draw();
   player.update();
+  cursor.scale = 0.5;
 
   for (let i = zombies.length - 1; i >= 0; i--) {
     zombies[i].draw();
@@ -62,5 +63,5 @@ function drawlevel1() {
 
 function mouseClicked() {
   player.shoot();
-  gunShot.play();
+  //gunShot.play();
 }

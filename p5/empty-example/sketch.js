@@ -12,7 +12,7 @@ function setup() {
 
   cursor = new Sprite();
   cursor.img = 'Assets/crosshair.png';
-  cursor.diameter = 50;
+  cursor.diameter = 10;
   cursor.layer = 3;
   cursor.scale = 2;
 
