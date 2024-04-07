@@ -1,3 +1,6 @@
+let gunShot;
+
+
 function setup() {
   createCanvas(800, 800);
   player = new Player();
@@ -12,7 +15,10 @@ function setup() {
   gun.color = 'green';
   gun.offset.x = 35;
   gun.layer = 4;
-
+  
+  soundFormats('mp3','wav');
+  gunShot = loadSound('Assets/SFX/GunShotSFX');
+ 
 
 }
 
@@ -56,4 +62,5 @@ function drawlevel1() {
 
 function mouseClicked() {
   player.shoot();
+  gunShot.play();
 }
