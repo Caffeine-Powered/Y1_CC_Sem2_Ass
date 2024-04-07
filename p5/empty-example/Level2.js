@@ -4,4 +4,9 @@ function setup(){
 
 function drawlevel2(){
 
+    rectMode(CENTER);
+    noCursor();
+    player.draw();
+    player.update();
+    
 }
