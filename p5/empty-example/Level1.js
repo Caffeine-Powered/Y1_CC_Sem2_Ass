@@ -36,16 +36,6 @@ function drawlevel1() {
   frame++;
 }
 
-
-
-
-
-
-
-
-
-
-
 function mouseClicked() {
   player.shoot();
 

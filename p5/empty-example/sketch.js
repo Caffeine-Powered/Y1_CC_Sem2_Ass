@@ -16,13 +16,13 @@ function setup() {
   cursor.img = 'Assets/crosshair.png';
   cursor.diameter = 10;
   cursor.layer = 3;
-  cursor.scale = 2;
+ 
+
 
   gun = new Sprite(width / 2, height / 2, 30, 10);
   gun.color = 'green';
   gun.offset.x = 35;
   gun.layer = 4;
-
 
 }
 
