@@ -17,18 +17,22 @@ function setup() {
   cursor.diameter = 10;
   cursor.layer = 3;
  
+  gun = new Sprite();
+  gun.img = 'Assets/Gunspr.png';
+  gun.offset.x = 35;
+  gun.layer = 4;
+  gun.scale = .5;
 
-
-  gun = new Sprite(width / 2, height / 2, 30, 10);
+ /**  gun = new Sprite(width / 2, height / 2, 30, 10);
   gun.color = 'green';
   gun.offset.x = 35;
   gun.layer = 4;
-
+**/
 }
 
 function draw() {
 
-  if (score == 2){
+  if (score == 100){
     level = 2;
   }
 
@@ -39,6 +43,8 @@ function draw() {
   } else if (level == 2) {
     drawlevel2();
   }
+}
+  
 
 
-  }
+  

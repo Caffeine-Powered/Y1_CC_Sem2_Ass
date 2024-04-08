@@ -10,14 +10,19 @@ class Player {
   draw() {
     push();
     translate(this.pos.x, this.pos.y);
+    fill(255);
     rect(0, 0, 20, 20);
     pop();
   
 
-  
     gun.overlaps(cursor);
     gun.rotateTowards(mouse, 0.5, 0);
     gun.moveTowards(this.pos.x, this.pos.y, 1, 0);
+    if (mouseX < this.pos.x){
+      gun.mirror.y = true;
+    }else{
+      gun.mirror.y = false;
+    }
 
     for (let bullet of this.bullets) {
       bullet.update();

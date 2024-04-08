@@ -12,7 +12,10 @@
     player.draw();
     player.update();
     cursor.scale = 0.5;
-    zombieSpawnTime = 150;
+
+    cursor.position.x = mouseX;
+    cursor.position.y = mouseY;
+  
   
     for (let i = zombies.length - 1; i >= 0; i--) {
       zombies[i].draw();
@@ -23,21 +26,17 @@
         zombies.splice(i, 1);
         console.log(score);
       }
+  
     }
   
-    if (frameCount % 200 == 0) {
+    if (frame >= zombieSpawnTime) {
       zombies.push(new Zombie(2));
+      console.log(zombies);
+      zombieSpawnTime *= 0.95;
+      frame = 0;
     }
-  
-  
-  
-    cursor.position.x = mouseX;
-    cursor.position.y = mouseY;
-  
-  
+    frame++;
     
-  
-  
   }
   
   function mouseClicked() {
