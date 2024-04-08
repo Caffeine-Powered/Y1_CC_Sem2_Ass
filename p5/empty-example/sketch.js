@@ -3,13 +3,16 @@ let gun;                  //gun var for gun sprite
 let cursor;               //cursor var for cursor sprite
 let zombies = [];
 let zombieSpawnTime = 300;
-let frame = 0;
+let bruisers = [];
+let bruiserSpawnTime = 300;
+let zframe = 0;
+let bframe = 0;
 let score = 0;
 let level = 0;
 let health = 3;
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(1000, 1000);
   player = new Player();
 
   cursor = new Sprite();

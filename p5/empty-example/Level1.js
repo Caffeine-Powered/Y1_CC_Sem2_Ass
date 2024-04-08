@@ -30,17 +30,37 @@ function drawlevel1() {
 
   }
 
-  if (frame >= zombieSpawnTime && zombies.length < 8) {
-    zombies.push(new Zombie(2));
+  if (zframe >= zombieSpawnTime && zombies.length < 8) {
+    zombies.push(new Zombie(1.5));
     zombieSpawnTime *= 0.95;
-    frame = 0;
+    zframe = 0;
   }
-  frame++;
+  zframe++;
+
+
+//-----------------------------------------------------------------------------------
+
+for (let i = bruisers.length - 1; i >= 0; i--) {
+  bruisers[i].draw();
+  bruisers[i].update();
+
+  if (player.hasShot(bruisers[i])) {
+    score++;
+    bruisers.splice(i, 1);
+    console.log(score);
+  }
+
 }
 
+if (bframe >= bruiserSpawnTime && bruisers.length < 8) {
+  bruisers.push(new Bruiser(0.8));
+  bruiserSpawnTime *= 2;
+  bframe = 0;
+}
+bframe++;
+}
 
-
-
+//-----------------------------------------------------------------------------------
 function mouseClicked() {
   player.shoot();
 }
