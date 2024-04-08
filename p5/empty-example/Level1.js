@@ -13,7 +13,7 @@ function drawlevel1() {
   player.update();
   cursor.scale = 0.5;
   gun.scale = 0.5;
-  
+
 
   cursor.position.x = mouseX;
   cursor.position.y = mouseY;
@@ -30,7 +30,7 @@ function drawlevel1() {
 
   }
 
-  if (frame >= zombieSpawnTime && zombies.length <10) {
+  if (frame >= zombieSpawnTime && zombies.length < 8) {
     zombies.push(new Zombie(2));
     zombieSpawnTime *= 0.95;
     frame = 0;
@@ -38,7 +38,9 @@ function drawlevel1() {
   frame++;
 }
 
+
+
+
 function mouseClicked() {
   player.shoot();
-
 }

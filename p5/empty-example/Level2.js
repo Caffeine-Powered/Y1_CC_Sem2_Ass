@@ -31,7 +31,6 @@
   
     if (frame >= zombieSpawnTime) {
       zombies.push(new Zombie(2));
-      console.log(zombies);
       zombieSpawnTime *= 0.95;
       frame = 0;
     }

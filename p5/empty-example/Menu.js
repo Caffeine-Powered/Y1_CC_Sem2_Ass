@@ -4,6 +4,7 @@
 function Menu() {
     createCanvas(800, 800);
     background(100);
+    rectMode(CORNER);
     textSize(30);
     cursor.scale = 0;
     gun.scale = 0;
