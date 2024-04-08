@@ -32,7 +32,7 @@ function setup() {
 
 function draw() {
 
-  if (score == 100){
+  if (score == 50){
     level = 2;
   }
 

@@ -3,9 +3,10 @@
 
   
   function drawlevel2() {
-    background(255, 255, 100);
+    background(255, 100, 100);
     textSize(30);
     text(score, width / 2, 100);
+    zombieSpawnTime = 300;
   
     rectMode(CENTER);
     noCursor();
