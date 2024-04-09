@@ -37,6 +37,7 @@ class Zombie {
 
   ateYou() {
     return dist(this.pos.x, this.pos.y, player.pos.x, player.pos.y) < 20;
+    playerHealth--;
   }
 
   update() {

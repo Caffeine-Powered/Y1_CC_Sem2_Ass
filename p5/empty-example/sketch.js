@@ -1,41 +1,36 @@
 let player;               //player var
 let gun;                  //gun var for gun sprite
-let cursor;               //cursor var for cursor sprite
+let crosshair;               //crosshair var for crosshair sprite
 let zombies = [];
 let zombieSpawnTime = 300;
-let bruisers = [];
-let bruiserSpawnTime = 300;
+let chasers = [];
+let chaserSpawnTime = 300;
 let zframe = 0;
 let bframe = 0;
 let score = 0;
 let level = 0;
-let health = 3;
+let playerHealth = 3;
 
 function setup() {
   createCanvas(1000, 1000);
   player = new Player();
 
-  cursor = new Sprite();
-  cursor.img = 'Assets/crosshair.png';
-  cursor.diameter = 10;
-  cursor.layer = 3;
- 
+  crosshair = new Sprite();
+  crosshair.img = 'Assets/crosshair.png';
+  crosshair.diameter = 10;
+  crosshair.layer = 3;
+
   gun = new Sprite();
   gun.img = 'Assets/Gunspr.png';
   gun.offset.x = 35;
   gun.layer = 4;
   gun.scale = .5;
 
- /**  gun = new Sprite(width / 2, height / 2, 30, 10);
-  gun.color = 'green';
-  gun.offset.x = 35;
-  gun.layer = 4;
-**/
 }
 
 function draw() {
 
-  if (score == 50){
+  if (score >= 10) {
     level = 2;
   }
 
@@ -46,8 +41,19 @@ function draw() {
   } else if (level == 2) {
     drawlevel2();
   }
+
 }
-  
+
+function restart() {
+  player = new Player();
+  zombies = [];
+  zombieSpawnTime = 300;
+  chasers = [];
+  chaserSpawnTime = 300;
+  score = 0;
+  level = 0;
+}
 
 
-  
+
+

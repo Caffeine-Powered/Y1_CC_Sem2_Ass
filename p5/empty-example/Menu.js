@@ -6,8 +6,10 @@ function Menu() {
     background(100);
     rectMode(CORNER);
     textSize(30);
-    cursor.scale = 0;
+    cursor(ARROW);
+    crosshair.scale = 0;
     gun.scale = 0;
+
 
     fill(0,255,0);
     playButt = rect(0, 0, width, height / 2);

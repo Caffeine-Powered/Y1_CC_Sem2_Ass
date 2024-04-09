@@ -15,7 +15,7 @@ class Player {
     pop();
   
 
-    gun.overlaps(cursor);
+    gun.overlaps(crosshair);
     gun.rotateTowards(mouse, 0.5, 0);
     gun.moveTowards(this.pos.x, this.pos.y, 1, 0);
     if (mouseX < this.pos.x){

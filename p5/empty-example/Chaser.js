@@ -1,4 +1,6 @@
-class Bruiser {
+
+
+class Chaser {
 
   constructor(speed) {
     this.speed = speed;
@@ -21,13 +23,14 @@ class Bruiser {
   draw() {
     push();
     fill(255, 0, 0);
-    rect(this.pos.x, this.pos.y, 40, 40);
+    rect(this.pos.x, this.pos.y, 15, 15);
     pop();
+    
   }
 
-  hasShot(bruiser) {
+  hasShot(chaser) {
     for (let i = 0; i < this.bullets.length; i++) {
-      if (dist(this.bullets[i].x, this.bullets[i].y, bruiser.pos.x, bruiser.pos.y) < 15) {
+      if (dist(this.bullets[i].x, this.bullets[i].y, chaser.pos.x, chaser.pos.y) < 15) {
         this.bullets.splice(i, 1);
         return true;
       }
