@@ -62,7 +62,7 @@ class Player {
 
   shoot() {
     this.bullets.push(new Bullet(this.pos.x, this.pos.y, this.angle));
-    //gunShot.play();
+    gunShot.play();
   }
 
 

@@ -13,6 +13,7 @@ let playerHealth = 3;
 
 function setup() {
   createCanvas(1000, 1000);
+  userStartAudio()
   player = new Player();
 
   crosshair = new Sprite();
