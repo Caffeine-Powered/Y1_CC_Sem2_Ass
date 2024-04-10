@@ -12,6 +12,7 @@ function drawlevel1() {
   gun.scale = 0.5;
 
 
+
   crosshair.position.x = mouseX;
   crosshair.position.y = mouseY;
 
@@ -71,5 +72,4 @@ function drawlevel1() {
 //-----------------------------------------------------------------------------------
 function mouseClicked() {
   player.shoot();
-  player.GunSFX();
 }

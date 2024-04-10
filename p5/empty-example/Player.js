@@ -13,14 +13,14 @@ class Player {
     fill(255);
     rect(0, 0, 20, 20);
     pop();
-  
+
 
     gun.overlaps(crosshair);
     gun.rotateTowards(mouse, 0.5, 0);
     gun.moveTowards(this.pos.x, this.pos.y, 1, 0);
-    if (mouseX < this.pos.x){
+    if (mouseX < this.pos.x) {
       gun.mirror.y = true;
-    }else{
+    } else {
       gun.mirror.y = false;
     }
 
@@ -29,7 +29,7 @@ class Player {
       bullet.draw();
     }
 
-}
+  }
 
   update() {
     let xSpeed = 0;
@@ -60,10 +60,34 @@ class Player {
     return false;
   }
 
-  shoot() {
+  /**shoot() {
     this.bullets.push(new Bullet(this.pos.x, this.pos.y, this.angle));
     gunShot.play();
   }
+**/
+  shoot() {
+    if (bulletCount > 0) {
+      this.bullets.push(new Bullet(this.pos.x, this.pos.y, this.angle));
+      gunShot.play();
+      bulletCount--;
+      if (bulletCount == 0) {
+
+          bulletCount = 6;
+        }
+
+      }
+
+    }
+    // if (reloadWait = 300) {
+    //   bulletCount = 6;
+    //   reloadWait = 0;
+  }
 
 
-}
+//}
+
+
+
+
+
+

@@ -10,6 +10,8 @@ let bframe = 0;
 let score = 0;
 let level = 0;
 let playerHealth = 3;
+let bulletCount = 6;
+let reloadWait = 0;
 
 function preload(){
   soundFormats('wav');
@@ -20,6 +22,7 @@ function preload(){
 
 function setup() {
   createCanvas(1000, 1000);
+  frameRate(60);
   userStartAudio()
   player = new Player();
 
