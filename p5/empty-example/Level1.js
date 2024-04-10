@@ -26,6 +26,7 @@ function drawlevel1() {
 
     if (player.hasShot(zombies[i])) {
       score++;
+      zombieDead.play();
       zombies.splice(i, 1);
       console.log(score);
     }
@@ -52,7 +53,7 @@ function drawlevel1() {
     }
     if (player.hasShot(chasers[i])) {
       score = score + 2;
-
+      chaserDead.play();
       chasers.splice(i, 1);
       console.log(score);
     }
@@ -70,4 +71,5 @@ function drawlevel1() {
 //-----------------------------------------------------------------------------------
 function mouseClicked() {
   player.shoot();
+  player.GunSFX();
 }

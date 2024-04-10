@@ -1,3 +1,5 @@
+let zombieDead;
+
 class Zombie {
 
   constructor(speed) {

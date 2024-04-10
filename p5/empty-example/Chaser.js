@@ -1,4 +1,4 @@
-
+let chaserDead;
 
 class Chaser {
 

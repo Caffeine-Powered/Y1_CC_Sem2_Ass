@@ -11,6 +11,13 @@ let score = 0;
 let level = 0;
 let playerHealth = 3;
 
+function preload(){
+  soundFormats('wav');
+  gunShot = loadSound('Assets/SFX/GunshotSFX.wav');
+  zombieDead = loadSound('Assets/SFX/ZombieDeathSplat.wav');
+  chaserDead = loadSound('Assets/SFX/ChaserDeathSplat.wav');
+}
+
 function setup() {
   createCanvas(1000, 1000);
   userStartAudio()
@@ -26,6 +33,8 @@ function setup() {
   gun.offset.x = 35;
   gun.layer = 4;
   gun.scale = .5;
+
+
 
 }
 
