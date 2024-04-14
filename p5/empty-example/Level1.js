@@ -16,9 +16,9 @@ function drawlevel1() {               //draw level 1 function
   crosshair.position.x = mouseX;         //sets crosshair x postition to mouse x position
   crosshair.position.y = mouseY;         //sets crosshair y postition to mouse y position
 
-  for (let i = zombies.length - 1; i >= 0; i--) { //
-    zombies[i].draw();
-    zombies[i].update();
+  for (let i = zombies.length - 1; i >= 0; i--) { //i = zombie length -1, if i is equal or greater than 0, decrement i by 1
+    zombies[i].draw();                            //draw zombies
+    zombies[i].update();                          //update zombies
 
     if (zombies[i].ateYou()) {            //if zombie touches player
       restart();                          //restart function
@@ -34,39 +34,39 @@ function drawlevel1() {               //draw level 1 function
 
   }
 
-  if (zframe >= zombieSpawnTime && zombies.length < 8) {
-    zombies.push(new Zombie(1.5));
-    zombieSpawnTime *= 0.6;
-    zframe = 0;
+  if (zframe >= zombieSpawnTime && zombies.length < 8) {  //if the zombie  frame count is equal or greater than the zombie spawn time and there is less than 8 zombies in array
+    zombies.push(new Zombie(1.5));                        //add a new zombie with speed set to 1.5
+    zombieSpawnTime *= 0.6;                               //multiply zombie spawn time by 0.6
+    zframe = 0;                                           //reset zombie frame count
   }
-  zframe++;
+  zframe++;                                               //increment zombie frame count
 
 
   //-----------------------------------------------------------------------------------
 
-  for (let i = chasers.length - 1; i >= 0; i--) {
-    chasers[i].draw();
-    chasers[i].update();
+  for (let i = chasers.length - 1; i >= 0; i--) { //i = chaser length -1, if i is equal or greater than 0, decrement i by 1
+    chasers[i].draw();                            //draw chaser
+    chasers[i].update();                          //update chaser
 
-    if (chasers[i].ateYou()) { // add this
-      restart();
-      break;
+    if (chasers[i].ateYou()) {                    //if chaser touches you
+      restart();                                  //restart function
+      break;                                      //break
     }
-    if (player.hasShot(chasers[i])) {
-      score = score + 2;
-      chaserDead.play();
-      chasers.splice(i, 1);
-      console.log(score);
+    if (player.hasShot(chasers[i])) { //if the player has shot a chaser
+      score = score + 2;              //increment score by 2
+      chaserDead.play();              //play chaser death sound
+      chasers.splice(i, 1);           //remove chaser from array
+      console.log(score);             //draw score in console
     }
 
   }
 
-  if (bframe >= chaserSpawnTime && chasers.length < 2) {
-    chasers.push(new Chaser(2.5));
-    chaserSpawnTime *= 0.9;
-    bframe = 0;
+  if (bframe >= chaserSpawnTime && chasers.length < 2) {  //if the chaser frame count is equal or greater than the chaser spawn time and there is less than 8 chaser in array
+    chasers.push(new Chaser(2.5));                        //add a new chaser with speed set to 2.5
+    chaserSpawnTime *= 0.9;                               //multiply chaser spawn time by 0.9
+    bframe = 0;                                           //reset chaser frame count
   }
-  bframe++;
+  bframe++;                                               //increment chaser frame count
 }
 
 //-----------------------------------------------------------------------------------
