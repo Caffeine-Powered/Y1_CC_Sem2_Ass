@@ -1,13 +1,13 @@
-let gunShot;
+let gunShot;  //sets up gunshot variable
 
-class Player {
-  constructor() {
-    this.pos = createVector(width / 2, height / 2);
-    this.angle = 0;
-    this.bullets = [];
+class Player {        //sets up Player class
+  constructor() {           //sets up contructor
+    this.pos = createVector(width / 2, height / 2); //sets up local variable as a p5 vector object
+    this.angle = 0;                                 //sets the local angel variable to 0
+    this.bullets = [];                              //sets up bullet array
   }
 
-  draw() {
+  draw() {                                          
     push();
     translate(this.pos.x, this.pos.y);
     fill(255);
@@ -60,34 +60,10 @@ class Player {
     return false;
   }
 
-  /**shoot() {
+  shoot() {
     this.bullets.push(new Bullet(this.pos.x, this.pos.y, this.angle));
     gunShot.play();
   }
-**/
-  shoot() {
-    if (bulletCount > 0) {
-      this.bullets.push(new Bullet(this.pos.x, this.pos.y, this.angle));
-      gunShot.play();
-      bulletCount--;
-      if (bulletCount == 0) {
-
-          bulletCount = 6;
-        }
-
-      }
-
-    }
-    // if (reloadWait = 300) {
-    //   bulletCount = 6;
-    //   reloadWait = 0;
-  }
 
 
-//}
-
-
-
-
-
-
+}
