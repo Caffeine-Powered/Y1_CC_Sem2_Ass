@@ -1,8 +1,7 @@
 
 function drawlevel2() {
   background(bg2);
-  textSize(30);
-  text(score, width / 2, 100);
+
   crosshair.visable = true;
   rectMode(CENTER);
   noCursor();
@@ -47,7 +46,7 @@ function drawlevel2() {
     chasers[i].draw();
     chasers[i].update();
 
-    if (chasers[i].ateYou()) { 
+    if (chasers[i].ateYou()) {
       restart();
       break;
     }
@@ -66,7 +65,20 @@ function drawlevel2() {
     bframe = 0;
   }
   bframe++;
-}
+
+  image(HUD, 0, 0);
+  textSize(30);
+  fill(255); 
+  text("LEVEL: 2", 156, 42);
+  if (score >= 100) {
+    textSize(25)
+  }else {
+        textSize(30);
+      }
+      text(score, 485, 43);        //draws score variable in top center of canvas 
+
+    }
+    
 
 //-----------------------------------------------------------------------------------
 function mouseClicked() {

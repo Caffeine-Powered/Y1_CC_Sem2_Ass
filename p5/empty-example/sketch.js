@@ -11,6 +11,7 @@ let score = 0;                //score variable
 let level = 0;                //level select variable
 let bg1;
 let bg2;
+let HUD;
 
 
 function preload(){           // preloads function for p5 sound
@@ -27,6 +28,7 @@ function setup() {              //set up function
   userStartAudio()              //starts audio
   bg1 = loadImage('Assets/CC_BG1.png');
   bg2 = loadImage('Assets/CC_BG2.png');
+  HUD = loadImage('Assets/CC_Ass2_BGHUD.png');
   player = new Player();        //draws a new player
 
   crosshair = new Sprite();                 //sets up crosshair sprite

@@ -2,8 +2,8 @@
 function drawlevel1() {               //draw level 1 function
 
   background(bg1);
-  textSize(30);                       //sets text size to 30px
-  text(score, width / 2, 100);        //draws score variable in top center of canvas
+
+
   crosshair.visable = true;           //sets crosshair sprite to be visable
   rectMode(CENTER);                   //draws rectangles from center
   noCursor();                         //hides mouse cursor
@@ -68,9 +68,26 @@ function drawlevel1() {               //draw level 1 function
     bframe = 0;                                           //reset chaser frame count
   }
   bframe++;                                               //increment chaser frame count
-}
+
+  image(HUD,0,0);
+  textSize(30); 
+  fill(255);                      //sets text size to 30px
+  text("LEVEL: 1",156,42);
+  if (score >= 100) {
+    textSize(25)
+  }else{
+        textSize(30);
+      }
+      text(score, 485, 43);        //draws score variable in top center of canvas 
+    }
+    
+
+  
+  
 
 //-----------------------------------------------------------------------------------
 function mouseClicked() {   //function for if mouse is clicked
   player.shoot();           //perform shoot function in Player.js
+
+
 }
