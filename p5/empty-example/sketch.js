@@ -10,6 +10,7 @@ let bframe = 0;               //frame count variable for chasers
 let score = 0;                //score variable
 let level = 0;                //level select variable
 let bg1;
+let bg2;
 
 
 function preload(){           // preloads function for p5 sound
@@ -25,6 +26,7 @@ function setup() {              //set up function
   frameRate(60);                //sets framerate to 60fps
   userStartAudio()              //starts audio
   bg1 = loadImage('Assets/CC_BG1.png');
+  bg2 = loadImage('Assets/CC_BG2.png');
   player = new Player();        //draws a new player
 
   crosshair = new Sprite();                 //sets up crosshair sprite

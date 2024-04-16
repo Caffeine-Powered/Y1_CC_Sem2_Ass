@@ -1,6 +1,6 @@
 
 function drawlevel2() {
-  background(255, 100, 100);
+  background(bg2);
   textSize(30);
   text(score, width / 2, 100);
   crosshair.visable = true;
