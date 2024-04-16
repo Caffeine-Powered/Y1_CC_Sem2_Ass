@@ -14,17 +14,19 @@ let bg2;
 let HUD;
 let MM;
 let ctrls;
+let GO;
 let lframes = 0;
 
-function preload(){           // preloads function for p5 sound
-  soundFormats('wav');         //supports .wav audio
+function preload() {           // preloads function for p5 sound
+  soundFormats('wav', 'mp3');         //supports .wav audio
   gunShot = loadSound('Assets/SFX/GunshotSFX.wav');   //loads sound for gun
   zombieDead = loadSound('Assets/SFX/ZombieDeathSplat.wav');  //loads sound for zombie death
   chaserDead = loadSound('Assets/SFX/ChaserDeathSplat.wav');  //loads sound for chaser death
+  bgMusic = loadSound('Assets/SFX/Music_Loop.mp3');
 }
 
 function setup() {              //set up function
-  
+
   createCanvas(1000, 1000);     //draws canvas
   frameRate(60);                //sets framerate to 60fps
   userStartAudio()              //starts audio
@@ -32,7 +34,9 @@ function setup() {              //set up function
   bg2 = loadImage('Assets/CC_BG2.png');
   HUD = loadImage('Assets/CC_Ass2_BGHUD.png');
   MM = loadImage('Assets/CC_Ass2_MM.png');
+  GO = loadImage('Assets/CC_Ass2_GO.png');
   ctrls = loadImage('Assets/CC_Ass2_Ctrls.png');
+
   player = new Player();        //draws a new player
 
   crosshair = new Sprite();                 //sets up crosshair sprite
@@ -45,23 +49,26 @@ function setup() {              //set up function
   gun.offset.x = 35;                        //offsets gun from player by 35px
   gun.layer = 4;                            //draws gun on seperate layer
   gun.scale = .5;                           //scales gun sprite down by half
-
-
-
+  bgMusic.setVolume(0.2);
+  bgMusic.loop();
 }
 
 function draw() {                           //draw funtion
 
-  if (score >= 10) {                        //if score is equal or greater than X
-    level = 2;                              //set level variable to 2
-  }
+
+
 
   if (level == 0) {                         //if level = 0
     Menu();                                 //draw menu
-  } else if (level == 1) {                  //if level = 1
+  }
+  if (level == 1) {                  //if level = 1
     drawlevel1();                           //draw level 1
-  } else if (level == 2) {                  //if level = 2
-    drawlevel2();                           //draw level 2
+  }
+  if (level == 2) {                  //if level = 2
+    drawlevel2();                      //draw level 2
+  }
+  if(level == 3){
+    drawgameover();
   }
 
 }
@@ -72,8 +79,7 @@ function restart() {                        //sets up restart function
   zombieSpawnTime = 300;                    //resets zombie spawn time
   chasers = [];                             //empties chaser variable
   chaserSpawnTime = 300;                    //resets chaser spawn time
-  score = 0;                                //resets score to 0
-  level = 0;                                //resets level to menu
+  level = 3;                                //resets score to 0
 }
 
 

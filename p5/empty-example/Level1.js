@@ -2,8 +2,6 @@
 function drawlevel1() {               //draw level 1 function
 
   background(bg1);
-
-
   crosshair.visable = true;           //sets crosshair sprite to be visable
   rectMode(CENTER);                   //draws rectangles from center
   noCursor();                         //hides mouse cursor
@@ -12,19 +10,22 @@ function drawlevel1() {               //draw level 1 function
   crosshair.scale = 0.5;              //sets crosshair scale to 1/2
   gun.scale = 0.5;                    //sets gun sprite scale to 1/2
   
-
-
   crosshair.position.x = mouseX;         //sets crosshair x postition to mouse x position
   crosshair.position.y = mouseY;         //sets crosshair y postition to mouse y position
+
+  if (score >= 1) { 
+    zombies = []; 
+    chasers = [];                    //if score is equal or greater than X
+    level = 2;                              //set level variable to 2
+ 
+
+  }
 
   for (let i = zombies.length - 1; i >= 0; i--) { //i = zombie length -1, if i is equal or greater than 0, decrement i by 1
     zombies[i].draw();                            //draw zombies
     zombies[i].update();                          //update zombies
 
-    if (zombies[i].ateYou()) {            //if zombie touches player
-      restart();                          //restart function
-      break;                              //breaks from if statement
-    }
+
 
     if (player.hasShot(zombies[i])) {     //if the player has shot a zombie
       score++;                            //increment score
