@@ -9,6 +9,8 @@ let zframe = 0;               //frame count variable for zombies
 let bframe = 0;               //frame count variable for chasers
 let score = 0;                //score variable
 let level = 0;                //level select variable
+let bg1;
+
 
 function preload(){           // preloads function for p5 sound
   soundFormats('wav');         //supports .wav audio
@@ -18,9 +20,11 @@ function preload(){           // preloads function for p5 sound
 }
 
 function setup() {              //set up function
+  
   createCanvas(1000, 1000);     //draws canvas
   frameRate(60);                //sets framerate to 60fps
   userStartAudio()              //starts audio
+  bg1 = loadImage('Assets/CC_BG1.png');
   player = new Player();        //draws a new player
 
   crosshair = new Sprite();                 //sets up crosshair sprite

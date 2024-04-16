@@ -1,6 +1,7 @@
 
 function drawlevel1() {               //draw level 1 function
-  background(100, 100, 100);          //sets background colour to grey
+
+  background(bg1);
   textSize(30);                       //sets text size to 30px
   text(score, width / 2, 100);        //draws score variable in top center of canvas
   crosshair.visable = true;           //sets crosshair sprite to be visable
