@@ -72,13 +72,13 @@ function drawlevel1() {               //draw level 1 function
   image(HUD,0,0);
   textSize(30); 
   fill(255);                      //sets text size to 30px
-  text("LEVEL: 1",156,42);
+  text("LEVEL: 1",218,42);
   if (score >= 100) {
     textSize(25)
   }else{
         textSize(30);
       }
-      text(score, 485, 43);        //draws score variable in top center of canvas 
+      text(score, 504, 43);        //draws score variable in top center of canvas 
     }
     
 

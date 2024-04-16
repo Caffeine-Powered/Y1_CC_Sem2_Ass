@@ -12,7 +12,9 @@ let level = 0;                //level select variable
 let bg1;
 let bg2;
 let HUD;
-
+let MM;
+let ctrls;
+let lframes = 0;
 
 function preload(){           // preloads function for p5 sound
   soundFormats('wav');         //supports .wav audio
@@ -29,6 +31,8 @@ function setup() {              //set up function
   bg1 = loadImage('Assets/CC_BG1.png');
   bg2 = loadImage('Assets/CC_BG2.png');
   HUD = loadImage('Assets/CC_Ass2_BGHUD.png');
+  MM = loadImage('Assets/CC_Ass2_MM.png');
+  ctrls = loadImage('Assets/CC_Ass2_Ctrls.png');
   player = new Player();        //draws a new player
 
   crosshair = new Sprite();                 //sets up crosshair sprite
