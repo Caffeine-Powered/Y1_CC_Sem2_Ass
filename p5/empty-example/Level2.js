@@ -8,8 +8,7 @@ function drawlevel2() {
   player.update();
   crosshair.scale = 0.5;
   gun.scale = 0.5;
-  zombieSpawnTime = 200;
-  chaserSpawnTime = 200;
+
   crosshair.position.x = mouseX;
   crosshair.position.y = mouseY;
 
