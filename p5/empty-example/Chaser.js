@@ -24,6 +24,15 @@ class Chaser {
     push();
     fill(200, 255, 0);
     rect(this.pos.x, this.pos.y, 15, 15);
+    if (this.pos.y >= player.pos.y) {
+      h = -8;
+    } else {
+      h = +5;
+    }
+    fill(100, 255, 100);
+    rect(this.pos.x + 10, this.pos.y+h, 5, 5);
+    fill(100, 255, 100);
+    rect(this.pos.x - 10, this.pos.y+h, 5, 5);
     fill(255);
     rect(this.pos.x, this.pos.y+4, 15, 8);
     pop();

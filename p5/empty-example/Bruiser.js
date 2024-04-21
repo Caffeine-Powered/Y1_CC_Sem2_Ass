@@ -1,6 +1,6 @@
-let zombieDead;
+let bruiserDead;
 
-class Zombie {
+class Bruiser {
 
   constructor(speed) {
     this.speed = speed;
@@ -22,24 +22,26 @@ class Zombie {
 
   draw() {
     push();
-    stroke(255,0,0);
-    fill(100, 255, 100);
-    rect(this.pos.x, this.pos.y, 20, 20);
     stroke(0);
-    fill(100);
-    rect(this.pos.x, this.pos.y+7, 20, 8);
-    fill(150);
-    rect(this.pos.x+5 , this.pos.y+7, 10, 8);
-    fill(255,0,0);
-    rect(this.pos.x,this.pos.y+7,2,8);
-    fill(0);
-    rect(this.pos.x, this.pos.y-8, 20, 5);
+    fill(100, 255, 100);
+    rect(this.pos.x, this.pos.y, 30, 30);
+    if (this.pos.y >= player.pos.y) {
+      h = -8;
+    } else {
+      h = +5;
+    }
+    fill(100, 255, 100);
+    rect(this.pos.x + 20, this.pos.y+h, 10, 10);
+    fill(100, 255, 100);
+    rect(this.pos.x - 20, this.pos.y+h, 10, 10);
+    fill(100,100,255);
+    rect(this.pos.x, this.pos.y+7, 30, 15);
     pop();
   }
 
-  hasShot(zombie) {
+  hasShot(bruiser) {
     for (let i = 0; i < this.bullets.length; i++) {
-      if (dist(this.bullets[i].x, this.bullets[i].y, zombie.pos.x, zombie.pos.y) < 15) {
+      if (dist(this.bullets[i].x, this.bullets[i].y, bruiser.pos.x, bruiser.pos.y) < 15) {
         this.bullets.splice(i, 1);
         return true;
       }

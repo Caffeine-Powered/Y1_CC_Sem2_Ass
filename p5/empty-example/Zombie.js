@@ -1,4 +1,5 @@
 let zombieDead;
+let h;
 
 class Zombie {
 
@@ -22,18 +23,30 @@ class Zombie {
 
   draw() {
     push();
-    stroke(255,0,0);
+    stroke(255, 0, 0);
     fill(100, 255, 100);
     rect(this.pos.x, this.pos.y, 20, 20);
+
+    if (this.pos.y >= player.pos.y) {
+      h = -8;
+    } else {
+      h = +5;
+    }
+    fill(100, 255, 100);
+    rect(this.pos.x + 15, this.pos.y+h, 5, 5);
+    fill(100, 255, 100);
+    rect(this.pos.x - 15, this.pos.y+h, 5, 5);
+
+
     stroke(0);
     fill(100);
-    rect(this.pos.x, this.pos.y+7, 20, 8);
+    rect(this.pos.x, this.pos.y + 7, 20, 8);
     fill(150);
-    rect(this.pos.x+5 , this.pos.y+7, 10, 8);
-    fill(255,0,0);
-    rect(this.pos.x,this.pos.y+7,2,8);
+    rect(this.pos.x + 5, this.pos.y + 7, 10, 8);
+    fill(255, 0, 0);
+    rect(this.pos.x, this.pos.y + 7, 2, 8);
     fill(0);
-    rect(this.pos.x, this.pos.y-8, 20, 5);
+    rect(this.pos.x, this.pos.y - 8, 20, 5);
     pop();
   }
 

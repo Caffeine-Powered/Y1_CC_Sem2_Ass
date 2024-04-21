@@ -5,8 +5,11 @@ let zombies = [];             //sets up array for zombies
 let zombieSpawnTime = 300;    //variable for zombie spawning times
 let chasers = [];             //array for chasers
 let chaserSpawnTime = 300;    //chaser spawn variable
+let bruiser = [];             //array for chasers
+let bruiserSpawnTime = 300;    //chaser spawn variable
 let zframe = 0;               //frame count variable for zombies
-let bframe = 0;               //frame count variable for chasers
+let cframe = 0;               //frame count variable for chasers
+let bframe = 0;               //frame count for bruisers
 let score = 0;                //score variable
 let level = 0;                //level select variable
 let bg1;
@@ -55,7 +58,7 @@ function setup() {              //set up function
   gun.layer = 4;                            //draws gun on seperate layer
   gun.scale = .5;                           //scales gun sprite down by half
   bgMusic.setVolume(0.08);
-  //bgMusic.loop();
+  bgMusic.loop();
 }
 
 function draw() {                           //draw funtion
@@ -80,6 +83,8 @@ function restart() {                        //sets up restart function
   zombieSpawnTime = 300;                    //resets zombie spawn time
   chasers = [];                             //empties chaser variable
   chaserSpawnTime = 300;                    //resets chaser spawn time
+  bruisers = [];                             //empties chaser variable
+  bruiserSpawnTime = 300;                    //resets chaser spawn time
   level = 3;                                //resets score to 0
 }
 

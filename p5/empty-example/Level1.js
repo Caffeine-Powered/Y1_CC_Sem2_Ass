@@ -13,7 +13,7 @@ function drawlevel1() {               //draw level 1 function
   crosshair.position.x = mouseX;         //sets crosshair x postition to mouse x position
   crosshair.position.y = mouseY;         //sets crosshair y postition to mouse y position
 
-  if (score >= 40) {                  //if score is equal or greater than X
+  if (score >= 50) {                  //if score is equal or greater than X
     level = 2;                        //set level variable to 2
     zombies = [];
     chasers = [];
@@ -65,12 +65,12 @@ function drawlevel1() {               //draw level 1 function
 
   }
 
-  if (bframe >= chaserSpawnTime && chasers.length < 3) {  //if the chaser frame count is equal or greater than the chaser spawn time and there is less than 8 chaser in array
+  if (cframe >= chaserSpawnTime && chasers.length < 3) {  //if the chaser frame count is equal or greater than the chaser spawn time and there is less than 8 chaser in array
     chasers.push(new Chaser(2));                        //add a new chaser with speed set to 2.5
     chaserSpawnTime *= 0.9;                               //multiply chaser spawn time by 0.9
-    bframe = 0;                                           //reset chaser frame count
+    cframe = 0;                                           //reset chaser frame count
   }
-  bframe++;                                               //increment chaser frame count
+  cframe++;                                               //increment chaser frame count
 
   image(HUD, 0, 0);
   textSize(30);

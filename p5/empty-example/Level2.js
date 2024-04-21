@@ -59,26 +59,56 @@ function drawlevel2() {
 
   }
 
-  if (bframe >= chaserSpawnTime && chasers.length < 4) {
+  if (cframe >= chaserSpawnTime && chasers.length < 3) {
     chasers.push(new Chaser(2.5));
     chaserSpawnTime *= 0.7;
-    bframe = 0;
+    cframe = 0;
   }
-  bframe++;
+  cframe++;
+
+  //-----------------------------------------------------------------------
+  if (score >= 100) {
+    for (let i = bruiser.length - 1; i >= 0; i--) {
+      bruiser[i].draw();
+      bruiser[i].update();
+
+      if (bruiser[i].ateYou()) {
+        restart();
+        break;
+      }
+      if (player.hasShot(bruiser[i])) {
+        score = score + 2;
+        chaserDead.play();              //play chaser death sound
+        zombieGrowl.play();
+        bruiser.splice(i, 1);
+        console.log(score);
+      }
+
+    }
+
+    if (bframe >= bruiserSpawnTime && bruiser.length < 3) {
+      bruiser.push(new Bruiser(1));
+      bruiserSpawnTime *= 0.7;
+      bframe = 0;
+    }
+    bframe++;
+  }
+
+  //-----------------------------------------------------------------------
 
   image(HUD, 0, 0);
   textSize(30);
-  fill(255); 
+  fill(255);
   text("LEVEL: 2", 218, 42);
   if (score >= 100) {
     textSize(25)
-  }else {
-        textSize(30);
-      }
-      text(score, 504, 43);        //draws score variable in top center of canvas 
+  } else {
+    textSize(30);
+  }
+  text(score, 504, 43);        //draws score variable in top center of canvas 
 
-    }
-    
+}
+
 
 //-----------------------------------------------------------------------------------
 function mouseClicked() {
