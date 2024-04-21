@@ -17,8 +17,6 @@ function drawlevel1() {               //draw level 1 function
     level = 2;                        //set level variable to 2
     zombies = [];
     chasers = [];
-
-
   }
 
   for (let i = zombies.length - 1; i >= 0; i--) { //i = zombie length -1, if i is equal or greater than 0, decrement i by 1
@@ -84,13 +82,7 @@ function drawlevel1() {               //draw level 1 function
   text(score, 504, 43);        //draws score variable in top center of canvas 
 }
 
-
-
-
-
 //-----------------------------------------------------------------------------------
 function mouseClicked() {   //function for if mouse is clicked
   player.shoot();           //perform shoot function in Player.js
-
-
 }
