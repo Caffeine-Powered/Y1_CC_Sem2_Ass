@@ -38,7 +38,7 @@ function drawlevel1() {               //draw level 1 function
   }
 
   if (zframe >= zombieSpawnTime && zombies.length < 10) {  //if the zombie  frame count is equal or greater than the zombie spawn time and there is less than 8 zombies in array
-    zombies.push(new Zombie(1.2));                        //add a new zombie with speed set to 1.5
+    zombies.push(new Zombie(1.4));                        //add a new zombie with speed set to 1.5
     zombieSpawnTime *= 0.6;                               //multiply zombie spawn time by 0.6
     zframe = 0;                                           //reset zombie frame count
   }
