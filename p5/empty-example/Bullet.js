@@ -10,9 +10,9 @@ class Bullet{
     draw(){
         push();
         noStroke();
-        fill(255,255,0);
+        fill(255,0,0);
         circle(this.x,this.y,10);
-        fill(255);
+        fill(255,255,0);
         circle(this.x,this.y,5);
         pop();
     }

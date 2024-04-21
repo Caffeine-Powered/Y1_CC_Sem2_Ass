@@ -13,7 +13,7 @@ function drawlevel1() {               //draw level 1 function
   crosshair.position.x = mouseX;         //sets crosshair x postition to mouse x position
   crosshair.position.y = mouseY;         //sets crosshair y postition to mouse y position
 
-  if (score >= 10) {                  //if score is equal or greater than X
+  if (score >= 40) {                  //if score is equal or greater than X
     level = 2;                        //set level variable to 2
     zombies = [];
     chasers = [];
@@ -30,14 +30,15 @@ function drawlevel1() {               //draw level 1 function
     if (player.hasShot(zombies[i])) {     //if the player has shot a zombie
       score++;                            //increment score
       zombieDead.play();                  //play zombie death sound
+      zombieGrowl.play();
       zombies.splice(i, 1);               //remove zombie from array
       console.log(score);                 //draw score in console
     }
 
   }
 
-  if (zframe >= zombieSpawnTime && zombies.length < 8) {  //if the zombie  frame count is equal or greater than the zombie spawn time and there is less than 8 zombies in array
-    zombies.push(new Zombie(1.5));                        //add a new zombie with speed set to 1.5
+  if (zframe >= zombieSpawnTime && zombies.length < 10) {  //if the zombie  frame count is equal or greater than the zombie spawn time and there is less than 8 zombies in array
+    zombies.push(new Zombie(1.2));                        //add a new zombie with speed set to 1.5
     zombieSpawnTime *= 0.6;                               //multiply zombie spawn time by 0.6
     zframe = 0;                                           //reset zombie frame count
   }
@@ -57,14 +58,15 @@ function drawlevel1() {               //draw level 1 function
     if (player.hasShot(chasers[i])) { //if the player has shot a chaser
       score = score + 2;              //increment score by 2
       chaserDead.play();              //play chaser death sound
+      zombieGrowl.play();
       chasers.splice(i, 1);           //remove chaser from array
       console.log(score);             //draw score in console
     }
 
   }
 
-  if (bframe >= chaserSpawnTime && chasers.length < 2) {  //if the chaser frame count is equal or greater than the chaser spawn time and there is less than 8 chaser in array
-    chasers.push(new Chaser(2.5));                        //add a new chaser with speed set to 2.5
+  if (bframe >= chaserSpawnTime && chasers.length < 3) {  //if the chaser frame count is equal or greater than the chaser spawn time and there is less than 8 chaser in array
+    chasers.push(new Chaser(2));                        //add a new chaser with speed set to 2.5
     chaserSpawnTime *= 0.9;                               //multiply chaser spawn time by 0.9
     bframe = 0;                                           //reset chaser frame count
   }

@@ -23,7 +23,9 @@ function preload() {           // preloads function for p5 sound
   gunShot = loadSound('Assets/SFX/GunshotSFX.wav');   //loads sound for gun
   zombieDead = loadSound('Assets/SFX/ZombieDeathSplat.wav');  //loads sound for zombie death
   chaserDead = loadSound('Assets/SFX/ChaserDeathSplat.wav');  //loads sound for chaser death
-  bgMusic = loadSound('Assets/SFX/Music_Loop.mp3');
+  zombieGrowl = loadSound('Assets/SFX/Zombie_growl.wav');     //loads sound of zombie growl
+  chaserGrowl = loadSound('Assets/SFX/Chaser_growl.wav');     //loads sound of chaser growl
+  bgMusic = loadSound('Assets/SFX/Music_Loop.mp3');           //loads music for background
 }
 
 function setup() {              //set up function

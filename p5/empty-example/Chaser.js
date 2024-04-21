@@ -22,8 +22,10 @@ class Chaser {
 
   draw() {
     push();
-    fill(255, 0, 0);
+    fill(200, 255, 0);
     rect(this.pos.x, this.pos.y, 15, 15);
+    fill(255);
+    rect(this.pos.x, this.pos.y+4, 15, 8);
     pop();
     
   }

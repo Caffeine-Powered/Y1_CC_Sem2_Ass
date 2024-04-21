@@ -24,13 +24,14 @@ function drawlevel2() {
     if (player.hasShot(zombies[i])) {
       score++;
       zombieDead.play();                  //play zombie death sound
+      zombieGrowl.play();
       zombies.splice(i, 1);
       console.log(score);
     }
 
   }
 
-  if (zframe >= zombieSpawnTime && zombies.length < 12) {
+  if (zframe >= zombieSpawnTime && zombies.length < 10) {
     zombies.push(new Zombie(2));
     zombieSpawnTime *= 0.7;
     zframe = 0;
@@ -51,14 +52,15 @@ function drawlevel2() {
     if (player.hasShot(chasers[i])) {
       score = score + 2;
       chaserDead.play();              //play chaser death sound
+      zombieGrowl.play();
       chasers.splice(i, 1);
       console.log(score);
     }
 
   }
 
-  if (bframe >= chaserSpawnTime && chasers.length < 5) {
-    chasers.push(new Chaser(3));
+  if (bframe >= chaserSpawnTime && chasers.length < 4) {
+    chasers.push(new Chaser(2.5));
     chaserSpawnTime *= 0.7;
     bframe = 0;
   }
