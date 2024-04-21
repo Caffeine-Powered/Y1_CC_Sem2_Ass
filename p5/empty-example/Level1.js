@@ -13,9 +13,11 @@ function drawlevel1() {               //draw level 1 function
   crosshair.position.x = mouseX;         //sets crosshair x postition to mouse x position
   crosshair.position.y = mouseY;         //sets crosshair y postition to mouse y position
 
-  if (score >= 1) { 
+  if (score >= 10) { 
                    //if score is equal or greater than X
-    level = 2;                              //set level variable to 2
+    level = 2;
+    zombies = [];
+    chasers = [];                               //set level variable to 2
  
 
   }

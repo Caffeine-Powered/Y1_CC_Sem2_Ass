@@ -7,5 +7,15 @@ function drawgameover(){
     text("Your Score Was: "+score,width/2,650);
     text("Press 'Enter' To Restart",width/2, 800);
     text("Press 'ESC' To Quit",width/2, 900);
+
+    if (keyIsDown(13)) {
+        level = 1;
+        score = 0;
+    } else {
+        if (keyIsDown(27)) {
+            bgMusic.stop();
+            remove();
+        }
+    }
 }                                          //menu function
 

@@ -10,22 +10,22 @@ function Menu() {                                           //menu function
 
     fill(0, 100);                                          //sets colour to green
     rect(width / 2, 595, 400, 80);                          //draws rectangle on top half of canvas
-    fill(0,100);                                          //sets colour to red
+    fill(0, 100);                                          //sets colour to red
     rect(width / 2, 795, 400, 80);                 //draws rectangle on bottom half of canvas
     fill(0);                                                //set colour to black
     text("Press 'ENTER' To Play", width / 2, 600);                           //draws text in top center of canvas
     text("Press 'ESC' To Quit", width / 2, 800);                           //draws text in bottom center of canvas
-    image(ctrls,0,0);
-}
+    image(ctrls, 0, 0);
 
-function keyPressed() {
-    if (level = 1)
-    if (keyCode === 13) {           //if mouse is pressed in the top half of canvas
-        level = 1; 
-        score = 0;                                         //sets level to 1
+        if (keyIsDown(13)) {
+            level = 1;
+            score = 0;
+        } else {
+            if (keyIsDown(27)) {
+                bgMusic.stop();
+                remove();
+            }
+        }
+
     }
-    if (keyCode === 27) {
-        remove();
-    }                              
-}
 

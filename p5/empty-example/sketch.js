@@ -49,7 +49,7 @@ function setup() {              //set up function
   gun.offset.x = 35;                        //offsets gun from player by 35px
   gun.layer = 4;                            //draws gun on seperate layer
   gun.scale = .5;                           //scales gun sprite down by half
-  bgMusic.setVolume(0.2);
+  bgMusic.setVolume(0.08);
   bgMusic.loop();
 }
 
