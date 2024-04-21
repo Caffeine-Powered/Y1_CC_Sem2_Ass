@@ -10,8 +10,10 @@ class Player {        //sets up Player class
   draw() {                                          
     push();
     translate(this.pos.x, this.pos.y);
-    fill(255);
+     fill(255);
     rect(0, 0, 20, 20);
+    fill(255,0,0);
+    rect(0,3,2,10);
     pop();
 
 

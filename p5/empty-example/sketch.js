@@ -16,6 +16,7 @@ let MM;
 let ctrls;
 let GO;
 let lframes = 0;
+let playerSprite;
 
 function preload() {           // preloads function for p5 sound
   soundFormats('wav', 'mp3');         //supports .wav audio
@@ -36,6 +37,8 @@ function setup() {              //set up function
   MM = loadImage('Assets/CC_Ass2_MM.png');
   GO = loadImage('Assets/CC_Ass2_GO.png');
   ctrls = loadImage('Assets/CC_Ass2_Ctrls.png');
+  playerSprite = loadImage('Assets/Player_Sprite.png')
+
 
   player = new Player();        //draws a new player
 
@@ -46,18 +49,14 @@ function setup() {              //set up function
 
   gun = new Sprite();                       //sets up gun sprite
   gun.img = 'Assets/Gunspr.png';            //assigns sprite for gun
-  gun.offset.x = 35;                        //offsets gun from player by 35px
+  gun.offset.x = 40;                        //offsets gun from player by 35px
   gun.layer = 4;                            //draws gun on seperate layer
   gun.scale = .5;                           //scales gun sprite down by half
   bgMusic.setVolume(0.08);
-  bgMusic.loop();
+  //bgMusic.loop();
 }
 
 function draw() {                           //draw funtion
-
-
-
-
   if (level == 0) {                         //if level = 0
     Menu();                                 //draw menu
   }
