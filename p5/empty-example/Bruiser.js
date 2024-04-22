@@ -1,4 +1,4 @@
-let bruiserDead;
+let bruiserDead;                                    
 
 class Bruiser {
 

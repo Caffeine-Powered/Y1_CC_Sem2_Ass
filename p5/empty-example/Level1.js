@@ -28,7 +28,7 @@ function drawlevel1() {               //draw level 1 function
     if (player.hasShot(zombies[i])) {     //if the player has shot a zombie
       score++;                            //increment score
       zombieDead.play();                  //play zombie death sound
-      zombieGrowl.play();
+      zombieGrowl.play();                 //play zombie growl sound
       zombies.splice(i, 1);               //remove zombie from array
       console.log(score);                 //draw score in console
     }
@@ -56,28 +56,28 @@ function drawlevel1() {               //draw level 1 function
     if (player.hasShot(chasers[i])) { //if the player has shot a chaser
       score = score + 2;              //increment score by 2
       chaserDead.play();              //play chaser death sound
-      zombieGrowl.play();
+      zombieGrowl.play();             //play zombie growl sound
       chasers.splice(i, 1);           //remove chaser from array
       console.log(score);             //draw score in console
     }
 
   }
 
-  if (cframe >= chaserSpawnTime && chasers.length < 3) {  //if the chaser frame count is equal or greater than the chaser spawn time and there is less than 8 chaser in array
+  if (cframe >= chaserSpawnTime && chasers.length < 3) {  //if the chaser frame count is equal or greater than the chaser spawn time and there is less than 3 chaser in array
     chasers.push(new Chaser(2));                        //add a new chaser with speed set to 2.5
     chaserSpawnTime *= 0.9;                               //multiply chaser spawn time by 0.9
     cframe = 0;                                           //reset chaser frame count
   }
   cframe++;                                               //increment chaser frame count
 
-  image(HUD, 0, 0);
-  textSize(30);
+  image(HUD, 0, 0);               //draws HUD on canvas
+  textSize(30);                   //sets text size to 30px
   fill(255);                      //sets text size to 30px
-  text("LEVEL: 1", 218, 42);
-  if (score >= 100) {
-    textSize(25)
-  } else {
-    textSize(30);
+  text("LEVEL: 1", 218, 42);      //draws text in top left of screen
+  if (score >= 100) {             //if the score variable is equal or greater than 100
+    textSize(25)                  //change the text size to 25px
+  } else {                        //else
+    textSize(30);                 //text size set to 30px
   }
   text(score, 504, 43);        //draws score variable in top center of canvas 
 }

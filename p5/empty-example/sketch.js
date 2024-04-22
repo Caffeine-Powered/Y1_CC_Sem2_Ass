@@ -18,6 +18,7 @@ let HUD;                      //variable for HUD image
 let MM;                       //variable for menu background
 let ctrls;                    //variable for controls image
 let GO;                       //variable for game over screen
+let h;                        //variable for enemy hands
 
 function preload() {           // preloads function for p5 sound
   soundFormats('wav', 'mp3');         //supports .wav audio

@@ -1,5 +1,5 @@
 let zombieDead;
-let h;
+
 
 class Zombie {
 
