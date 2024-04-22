@@ -7,26 +7,26 @@ class Player {        //sets up Player class
     this.bullets = [];                              //sets up bullet array
   }
 
-  draw() {                                          
-    push();
-    translate(this.pos.x, this.pos.y);
-     fill(255);
-    rect(0, 0, 20, 20);
-    fill(255,0,0);
-    rect(0,3,2,10);
-    pop();
+  draw() {                                         //draw function
+    push();                                        //isolates code
+    translate(this.pos.x, this.pos.y);             //moves the character to the local x and y postitions
+     fill(255);                                    //changes shape fill to white
+    rect(0, 0, 20, 20);                            //draws a square in the top left corner, 20x20px
+    fill(255,0,0);                                 //changes shape fill to red
+    rect(0,3,2,10);                                 //draws a rectangle in the center of the square
+    pop();                                          //ends code isolations
 
 
-    gun.overlaps(crosshair);
-    gun.rotateTowards(mouse, 0.5, 0);
-    gun.moveTowards(this.pos.x, this.pos.y, 1, 0);
-    if (mouseX < this.pos.x) {
-      gun.mirror.y = true;
-    } else {
-      gun.mirror.y = false;
+    gun.overlaps(crosshair);                          //sets gun sprite to overlap the crosshair sprite
+    gun.rotateTowards(mouse, 0.5, 0);                 //rotates the gun sprite towards the cursor with a small delay
+    gun.moveTowards(this.pos.x, this.pos.y, 1, 0);    //moves the gun with the player sprite
+    if (mouseX < this.pos.x) {                        //if the mouse is to the left of the player sprite
+      gun.mirror.y = true;                            //mirror the gun on the y axis
+    } else {                                          //else
+      gun.mirror.y = false;                           //dont mirror the gun sprite
     }
 
-    for (let bullet of this.bullets) {
+    for (let bullet of this.bullets) {                //
       bullet.update();
       bullet.draw();
     }
