@@ -12,14 +12,12 @@ let cframe = 0;               //frame count variable for chasers
 let bframe = 0;               //frame count for bruisers
 let score = 0;                //score variable
 let level = 0;                //level select variable
-let bg1;
-let bg2;
-let HUD;
-let MM;
-let ctrls;
-let GO;
-let lframes = 0;
-let playerSprite;
+let bg1;                      //variable for level 1 background image
+let bg2;                      //variable for level 2 background image
+let HUD;                      //variable for HUD image
+let MM;                       //variable for menu background
+let ctrls;                    //variable for controls image
+let GO;                       //variable for game over screen
 
 function preload() {           // preloads function for p5 sound
   soundFormats('wav', 'mp3');         //supports .wav audio
@@ -36,14 +34,12 @@ function setup() {              //set up function
   createCanvas(1000, 1000);     //draws canvas
   frameRate(60);                //sets framerate to 60fps
   userStartAudio()              //starts audio
-  bg1 = loadImage('Assets/CC_BG1.png');
-  bg2 = loadImage('Assets/CC_BG2.png');
-  HUD = loadImage('Assets/CC_Ass2_BGHUD.png');
-  MM = loadImage('Assets/CC_Ass2_MM.png');
-  GO = loadImage('Assets/CC_Ass2_GO.png');
-  ctrls = loadImage('Assets/CC_Ass2_Ctrls.png');
-  playerSprite = loadImage('Assets/Player_Sprite.png')
-
+  bg1 = loadImage('Assets/CC_BG1.png'); //loads level 1 background image
+  bg2 = loadImage('Assets/CC_BG2.png'); //loads level 2 background image
+  HUD = loadImage('Assets/CC_Ass2_BGHUD.png');  //loads HUD image
+  MM = loadImage('Assets/CC_Ass2_MM.png');  //loads main menu image
+  GO = loadImage('Assets/CC_Ass2_GO.png');  //loads game over image
+  ctrls = loadImage('Assets/CC_Ass2_Ctrls.png');  //loads controls image
 
   player = new Player();        //draws a new player
 
@@ -57,8 +53,8 @@ function setup() {              //set up function
   gun.offset.x = 40;                        //offsets gun from player by 35px
   gun.layer = 4;                            //draws gun on seperate layer
   gun.scale = .5;                           //scales gun sprite down by half
-  bgMusic.setVolume(0.08);
-  bgMusic.loop();
+  bgMusic.setVolume(0.08);                  //sets auido volume to 0.008
+  bgMusic.loop();                           //starts background menu and loops it
 }
 
 function draw() {                           //draw funtion
@@ -71,8 +67,8 @@ function draw() {                           //draw funtion
   if (level == 2) {                  //if level = 2
     drawlevel2();                      //draw level 2
   }
-  if(level == 3){
-    drawgameover();
+  if(level == 3){                   //if level = 3
+    drawgameover();                   //draws game over screen
   }
 
 }
