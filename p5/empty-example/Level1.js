@@ -30,7 +30,7 @@ function drawlevel1() {               //draw level 1 function
       zombieDead.play();                  //play zombie death sound
       zombieGrowl.play();                 //play zombie growl sound
       zombies.splice(i, 1);               //remove zombie from array
-      console.log(score);                 //draw score in console
+
     }
 
   }
@@ -58,7 +58,7 @@ function drawlevel1() {               //draw level 1 function
       chaserDead.play();              //play chaser death sound
       zombieGrowl.play();             //play zombie growl sound
       chasers.splice(i, 1);           //remove chaser from array
-      console.log(score);             //draw score in console
+
     }
 
   }
