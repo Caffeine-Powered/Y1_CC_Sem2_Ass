@@ -26,45 +26,45 @@ class Player {        //sets up Player class
       gun.mirror.y = false;                           //dont mirror the gun sprite
     }
 
-    for (let bullet of this.bullets) {                //
-      bullet.update();
-      bullet.draw();
+    for (let bullet of this.bullets) {                //for each specific bullet in the array
+      bullet.update();                                //run update function for the bullet
+      bullet.draw();                                  //draw the bulley
     }
 
   }
 
-  update() {
-    let xSpeed = 0;
-    let ySpeed = 0;
-    if (keyIsDown(65)) {  //if A key is pressed
-      xSpeed = -3;
+  update() {                                           //player update function
+    let xSpeed = 0;                                    //sets x speed to 0
+    let ySpeed = 0;                                    //sets y speed to 0
+    if (keyIsDown(65)) {                               //if A key is pressed
+      xSpeed = -3;                                     //sets xspeed var to -3
     }
-    if (keyIsDown(68)) {  //if D key is pressed
-      xSpeed = 3;
+    if (keyIsDown(68)) {                               //if D key is pressed
+      xSpeed = 3;                                      //sets xspeed var to 3
     }
-    if (keyIsDown(87)) {  //if W key is pressed
-      ySpeed = -3;
+    if (keyIsDown(87)) {                               //if W key is pressed
+      ySpeed = -3;                                     //sets y speed to -3
     }
-    if (keyIsDown(83)) {  //if S ket is pressed
-      ySpeed = 3;
+    if (keyIsDown(83)) {                               //if S ket is pressed
+      ySpeed = 3;                                      //sets yspeed to 3
     }
-    this.pos.add(xSpeed, ySpeed);
-    this.angle = atan2(mouseY - this.pos.y, mouseX - this.pos.x);
+    this.pos.add(xSpeed, ySpeed);                      //updates player position by adding xspeed and yspeed
+    this.angle = atan2(mouseY - this.pos.y, mouseX - this.pos.x); //creates a vector between the player and the cursor location
   }
 
-  hasShot(zombie) {
-    for (let i = 0; i < this.bullets.length; i++) {
-      if (dist(this.bullets[i].x, this.bullets[i].y, zombie.pos.x, zombie.pos.y) < 15) {
-        this.bullets.splice(i, 1);
-        return true;
+  hasShot(zombie) {                                                                       //function for shooing zombie
+    for (let i = 0; i < this.bullets.length; i++) {                                       //for a specific bullet in the arrray
+      if (dist(this.bullets[i].x, this.bullets[i].y, zombie.pos.x, zombie.pos.y) < 15) {  //if the position of a bullets from a zombie is less than 15
+        this.bullets.splice(i, 1);                                                        //remove bullet from the array
+        return true;                                                                      //tells the zombie that it has been shot
       }
     }
-    return false;
+    return false;                                                                         //otherwise return false
   }
 
-  shoot() {
-    this.bullets.push(new Bullet(this.pos.x, this.pos.y, this.angle));
-    gunShot.play();
+  shoot() {                                                                               //shoot function
+    this.bullets.push(new Bullet(this.pos.x, this.pos.y, this.angle));                    //add new bullet to array
+    gunShot.play();                                                                       //play gunshot sound effect
   }
 
 
