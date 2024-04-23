@@ -22,7 +22,7 @@ let h;                        //variable for enemy hands
 
 function preload() {           // preloads function for p5 sound
   soundFormats('wav', 'mp3');         //supports .wav audio
-  gunShot = loadSound('Assets/SFX/GunshotSFX.wav');   //loads sound for gun
+  gunShot = loadSound('Assets/SFX/GunShotSFX.wav');   //loads sound for gun
   zombieDead = loadSound('Assets/SFX/ZombieDeathSplat.wav');  //loads sound for zombie death
   chaserDead = loadSound('Assets/SFX/ChaserDeathSplat.wav');  //loads sound for chaser death
   zombieGrowl = loadSound('Assets/SFX/Zombie_growl.wav');     //loads sound of zombie growl
