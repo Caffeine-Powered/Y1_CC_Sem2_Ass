@@ -51,9 +51,8 @@ class Zombie {                              //sets up class zombie
     }
     return false;  //otherwise return false
   }
-
-  ateYou() {                                                                  //ate you function
-    return dist(this.pos.x, this.pos.y, player.pos.x, player.pos.y) < 20;     //tells you when the zombie's position and the players position is less than 20px
+  ateYou() {  //ate you function
+    return dist(this.pos.x, this.pos.y, player.pos.x, player.pos.y) < 20; //tells you when the zombie's position and the players position is less than 20px
   }
 
   update() {                                                    //update function

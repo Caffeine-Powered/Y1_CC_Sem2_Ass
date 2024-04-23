@@ -23,7 +23,10 @@ function drawlevel1() {               //draw level 1 function
     zombies[i].draw();                            //draw zombies
     zombies[i].update();                          //update zombies
 
-
+    if (zombies[i].ateYou()) {            //if zombie touches player
+      restart();                          //restart function
+      break;                              //breaks from if statement
+    }
 
     if (player.hasShot(zombies[i])) {     //if the player has shot a zombie
       score++;                            //increment score
